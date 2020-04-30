@@ -7,7 +7,7 @@ const { APP_PORT, APP_ENV } = require('./configs/global.config');
 
 // Config logger
 if (APP_ENV !== 'dev') {
-    // TODO: config the consola to fire logs to ...
+    // TODO: config the consola to fire logs to ... with log formated
 }
 
 // Config express

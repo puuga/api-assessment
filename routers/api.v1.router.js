@@ -18,12 +18,11 @@ router.use(expressBasicAuth({
 }));
 
 const guard = require('../middlewares/Guard.middleware');
-router.use(guard.claimGuard);
 
 // claim resoure
 const claimController = require('../controllers/Claim.controller');
-router.get('/claims', claimController.index);
-router.get('/claims/:claim_number', claimController.show);
-router.post('/claims', claimController.store);
+router.get('/claims', [guard.claimGuard], claimController.index);
+router.get('/claims/:claim_number', [guard.claimGuard], claimController.show);
+router.post('/claims', [guard.claimGuard], claimController.store);
 
 module.exports = router;
