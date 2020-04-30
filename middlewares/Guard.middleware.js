@@ -15,7 +15,7 @@ const mockToken = {
     },
 };
 
-function claimGuard (req, res, next) {
+async function claimGuard (req, res, next) {
     consola.log('Guard.middleware claimGuard');
     
     if ( req.header('Token') ) {
@@ -39,6 +39,8 @@ function claimGuard (req, res, next) {
         consola.log('Guard.middleware claimGuard - missing token');
         res.sendStatus(401);
     }
+
+    return;
 }
 
 module.exports = {
