@@ -16,7 +16,7 @@ const mockToken = {
 };
 
 function claimGuard (req, res, next) {
-    consola.log('ClaimGuard.middleware guard');
+    consola.log('Guard.middleware claimGuard');
     
     if ( req.header('Token') ) {
         if (req.method === 'GET') {
@@ -24,19 +24,19 @@ function claimGuard (req, res, next) {
             if (mockToken[req.header('Token') + '.claim'] && mockToken[req.header('Token') + '.claim'].read) {
                 next();
             } else {
-                consola.log('ClaimGuard.middleware guard - permission');
+                consola.log('Guard.middleware claimGuard - invalid permission');
                 res.sendStatus(401);
             }
         } else {
             if (mockToken[req.header('Token') + '.claim'] && mockToken[req.header('Token') + '.claim'].write) {
                 next();
             } else {
-                consola.log('ClaimGuard.middleware guard - permission');
+                consola.log('Guard.middleware claimGuard - invalid permission');
                 res.sendStatus(401);
             }
         }
     } else {
-        consola.log('ClaimGuard.middleware guard - token');
+        consola.log('Guard.middleware claimGuard - missing token');
         res.sendStatus(401);
     }
 }
