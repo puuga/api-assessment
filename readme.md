@@ -19,3 +19,7 @@ docker run
     --name api-assessment-dev
     puuga/api-assessment:latest
 ```
+
+## Swagger
+
+<https://app.swaggerhub.com/apis/puuga/api-assessment/1.0.0#/>
