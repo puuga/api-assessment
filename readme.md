@@ -1,5 +1,11 @@
 # api-assessment
 
+## Working 😎
+
+`npm run dev` for development
+
+`npm start` for production run
+
 ## Docker command
 
 `docker build -t puuga/api-assessment:latest .`
