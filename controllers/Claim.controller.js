@@ -39,9 +39,9 @@ function store (req, res) {
     const claimPlain = req.body;
     // claimService.validate claimPlain
     // claimService.store claim
-    const claim = claimMocks.push(new Claim(claimPlain));
-    if (claim) {
-        res.status(201).json(claim);
+    const claimMocksLength = claimMocks.push(new Claim(claimPlain)); // claim is array.length
+    if (claimMocksLength) { // 😏
+        res.status(201).json(claimMocks[claimMocksLength-1]);
     } else {
         res.sendStatus(400);
     }
