@@ -2,9 +2,11 @@
 
 ## Working 😎
 
-`npm run dev` for development
+`npm i` and `npm run dev` for development
 
-`npm start` for production run
+`npm ci` and `npm start` for production run
+
+May the force see with you
 
 ## Docker command
 
