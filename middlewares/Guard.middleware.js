@@ -20,6 +20,7 @@ function claimGuard (req, res, next) {
     
     if ( req.header('Token') ) {
         if (req.method === 'GET') {
+            // TODO: Can authen & authro with external service
             if (mockToken[req.header('Token') + '.claim'] && mockToken[req.header('Token') + '.claim'].read) {
                 next();
             } else {

@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
+// -------------------------------------------------------------------------------------
 // Register route
 const routerV1 = require('./routers/api.v1.router');
 app.use('/api/v1', routerV1);
